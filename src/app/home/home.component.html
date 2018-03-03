@@ -1,4 +1,9 @@
-<p>
+<p *ngFor="let country of countries">
   home works!
-  <button type="button" class="btn btn-primary" [routerLink]="['/about']">child</button>
+  <a>
+  
+  {{ country.name }}
+</a>
+  <button type="button" class="btn btn-primary" [routerLink]="['/about',country]">child</button>
 </p>
+<!--[routerLink]="['/product-details', product.id]"-->
