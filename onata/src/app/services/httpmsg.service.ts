@@ -6,10 +6,11 @@ import { Http, Response } from '@angular/http';
 export class HttpmsgService {
 
   constructor() { }
-public extractData(res: Response) {
-    let body = res.json();
-    console.log(body);
-    return body || { };
-  }
+public extractData(res:Response){
+  console.log(res);
+  let body = res.json();
+  console.log(body);
+  return body || {};
+}
 
 }

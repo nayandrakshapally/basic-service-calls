@@ -1,0 +1,93 @@
+
+<div class="container">
+<div style="margin-top:2em;">
+
+  Filters:  <button (click)="onClickMe('10001')">New York</button> /   <button (click)="onClickMe('90001')">California</button>
+    /   <button (click)="onClickMe('60007')">Chicago</button> /   <button (click)="onClickMe('89131')">Las Vegas</button>
+</div>
+<br/>
+<div class="row" style="padding:0.5em;border: 1px solid grey">
+
+<div class="col-md-2" >
+<h4>Location</h4>
+</div>
+<div class="col-md-2">
+<h4> description </h4>
+</div>
+<div class="col-md-2" >
+<h4>temperature</h4>
+</div>
+<div class="col-md-2" >
+<h4> high temperature</h4>
+</div>
+<div class="col-md-2" >
+<h4> low temperature</h4>
+</div>
+
+</div>
+<div class="row" *ngIf="reports.query" style="border: 1px solid grey">
+    <div class="col-md-2" >
+<h4> {{reports.query.results.channel.location.city}} {{reports.query.results.channel.location.country}}
+    {{reports.query.results.channel.location.region}}
+</h4>
+</div>
+ <div class="col-md-2" >
+<h4> {{reports.query.results.channel.description}}
+</h4>
+</div>
+ <div class="col-md-2" >
+<h4> {{reports.query.results.channel.atmosphere.visibility}}
+</h4>
+</div>
+ <div class="col-md-2">
+<h4> {{reports.query.results.channel.item.forecast[1].high}}
+</h4>
+</div>
+ <div class="col-md-2">
+<h4> {{reports.query.results.channel.item.forecast[1].low}}
+</h4>
+</div>
+
+</div>
+<br/>
+<h3>Allow the user to toggle more data in the current conditions area:</h3>
+
+<div class="row"style="border: 1px solid grey">
+<div class="col-lg-3">
+<h4>    Wind Speed</h4>
+</div>
+<div class="col-lg-3">
+    <h4>
+    Humidity</h4>
+</div>
+<div class="col-lg-3">
+    <h4>
+    Pressure</h4>
+</div>
+<div class="col-lg-3">
+    <h4>
+    Sunrise/Sunset Time</h4>
+</div>
+
+</div>
+<div class="row" style="padding:1em;border: 1px solid grey">
+    <div class="col-lg-3">
+        <h4>
+        {{reports.query.results.channel.wind.speed}}</h4>
+</div>
+    <div class="col-lg-3">
+        <h4>
+        {{reports.query.results.channel.atmosphere.humidity}}</h4>
+</div>
+    <div class="col-lg-3">
+        <h4>
+        {{reports.query.results.channel.atmosphere.pressure}}</h4>
+</div>
+    <div class="col-lg-3">
+        <h4>
+        {{reports.query.results.channel.astronomy.sunrise}}/{{reports.query.results.channel.astronomy.sunset}}</h4>
+</div>
+    </div>
+</div>
+
+
